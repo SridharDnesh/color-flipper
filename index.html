@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Color Flipper</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/57e0aa4282.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./script.js" defer></script>
+  </head>
+  <body onload="resetIdleTimer()">
+    <nav>
+      <div class="nav-center">
+        <h3>Color Flipper</h3>
+        <ul>
+          <li>
+            <span>
+              <i class="fa-solid fa-clock-rotate-left"></i>
+            </span>
+            <p>History</p>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main>
+      <div class="content">
+        <p>Background Color: <span id="color">#f1f3f5</span></p>
+        <button id="btn">Randomize</button>
+      </div>
+    </main>
+  </body>
+</html>
