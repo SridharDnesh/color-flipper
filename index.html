@@ -10,13 +10,14 @@
       crossorigin="anonymous"
     ></script>
     <script src="./script.js" defer></script>
+    <script src="./history-track.js" defer></script>
   </head>
   <body onload="resetIdleTimer()">
     <nav>
       <div class="nav-center">
-        <h3>Color Flipper</h3>
+        <h3 id="logo">Color Flipper</h3>
         <ul>
-          <li>
+          <li id="history">
             <span>
               <i class="fa-solid fa-clock-rotate-left"></i>
             </span>
@@ -32,5 +33,17 @@
         <button id="btn">Randomize</button>
       </div>
     </main>
+
+    <div class="backdrop">
+      <div class="dialog">
+        <h3>History</h3>
+        <span id="dialog-close-icon">
+          <i class="fa-solid fa-close"></i>
+        </span>
+
+        <div id="dialog-body">
+        </div>
+      </div>
+    </div>
   </body>
 </html>

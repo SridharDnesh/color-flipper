@@ -1,6 +1,10 @@
 const button = document.getElementById("btn");
+const logo = document.getElementById("logo");
+
+let colorHistory = [];
 
 const colorTokens = [
+  "0",
   "1",
   "2",
   "3",
@@ -21,7 +25,7 @@ const colorTokens = [
 function generateRandomColor() {
   let randomColor = [];
   for (let i = 1; i <= 6; i++) {
-    randomColor.push(colorTokens[Math.floor(Math.random() * 15)]);
+    randomColor.push(colorTokens[Math.floor(Math.random() * 16)]);
   }
 
   return `#${randomColor.join("")}`;
@@ -29,10 +33,14 @@ function generateRandomColor() {
 
 button.addEventListener("click", function () {
   const span = document.getElementById("color");
-  const randomColor = generateRandomColor();
-  document.body.style.backgroundColor = randomColor;
+  const randomBackgroundColor = generateRandomColor();
+  document.body.style.backgroundColor = randomBackgroundColor;
 
-  span.innerText = randomColor.toUpperCase();
+  colorHistory.unshift(randomBackgroundColor)
+
+  appendToHistory();
+
+  span.innerText = randomBackgroundColor.toUpperCase();
 });
 
 let timeout;
@@ -53,7 +61,7 @@ function resetIdleTimer() {
   }
   timeout = setTimeout(function () {
     automate();
-  }, 5 * 1000);
+  }, 10 * 60 * 1000);
 }
 
 document.addEventListener("mousemove", resetIdleTimer);
